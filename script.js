@@ -78,7 +78,7 @@ const motivationalQuotes = [
 function displayRandomQuote() {
     const quoteElement = document.getElementById('quote-text');
     if (quoteElement) {
-        // Animação de saída (opcional, mas suave)
+
         quoteElement.style.transform = 'translateY(10px)';
         quoteElement.style.opacity = '0';
 
@@ -94,8 +94,6 @@ function displayRandomQuote() {
     }
 }
 
-// Exibe a primeira frase imediatamente ao carregar
-displayRandomQuote();
 
-// Atualiza a frase a cada 8 segundos
+displayRandomQuote();
 setInterval(displayRandomQuote, 8000); // 8000ms = 8 segundos
