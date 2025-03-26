@@ -148,6 +148,5 @@ function displayRandomQuote() {
     }
 }
 
-
 displayRandomQuote();
 setInterval(displayRandomQuote, 8000); // 8000ms = 8 segundos
