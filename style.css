@@ -8,7 +8,7 @@
 :root {
     --ipcb-blue: #00427C;      /* Azul escuro institucional do IPCB */
     --ipcb-light-blue: #0066B3; /* Azul mais claro para contraste */
-    --card-bg: #ffffff;         /* Fundo do cartão mantém-se branco */
+    --card-bg: #ffffff;         /* Fundo do cartão  */
 }
 
 body {
@@ -17,8 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    height: 100vh;
+    height: 100vh; 
     padding: 10px;
     margin: 0;
     color: #333;
