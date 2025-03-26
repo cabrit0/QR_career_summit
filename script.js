@@ -72,16 +72,16 @@ const motivationalQuotes = [
 
     // --- Humor Inteligente & Contextual (pt-PT / IPCB) ---
     "Que a tua ligação à net seja estável e as tuas ligações profissionais mais ainda!",
-    "Lembra-te: até a cadeira mais 'design' da ESART começou com um esboço.",
+    "Lembra-te: até a cadeira mais 'design' da ESART começou com um esboço.", 
     "Sobreviveste às 'práxis' e à época de exames. O mercado de trabalho? Um passeio no Parque do Barrocal.",
     "Se precisares de inspiração, pensa no pôr do sol visto do castelo. Ou vai buscar um café.",
-    "Dizem que o segredo está nos detalhes... e em entregar os relatórios da ESTCB a tempo.",
+    "Dizem que o segredo está nos detalhes... e em entregar os relatórios da EST a tempo.", 
     "Encontrar o emprego certo é como encontrar mesa livre na cantina ao meio-dia: requer estratégia e timing.",
     "Aprender a programar é como aprender a falar 'beirão': no início custa, mas depois entranha-se!",
     "Na dúvida entre dois caminhos, escolhe aquele que tem melhor cobertura de rede.",
-    "O teu potencial é mais vasto que os campos da ESAg.",
-    "Manter a calma numa entrevista é como fazer um exame na ESSA: respira fundo, confia na preparação.",
-    "O elevador da ESE pode demorar, mas a tua carreira não precisa de o fazer. Usa as escadas!",
+    "O teu potencial é mais vasto que os campos da ESA.", 
+    "Manter a calma numa entrevista é como fazer um exame na ESALD: respira fundo, confia na preparação.", 
+    "O elevador da ESE pode demorar, mas a tua carreira não precisa de o fazer. Usa as escadas!", 
     "Pro Tip: Um sorriso abre mais portas do que uma chave mestra (mas a chave também ajuda).",
     "Não te esqueças de onde vieste. E de trazer um queijo da região para o escritório novo.",
     "Objetivo: Ser tão eficiente como os Serviços Académicos em setembro (mas com menos filas).",
@@ -93,6 +93,10 @@ const motivationalQuotes = [
     "A vida é muito curta para não aproveitar o sol na esplanada... depois de enviares o CV.",
     "A receita do sucesso pode incluir 'farinha amparo', mas leva sobretudo muito trabalho.",
     "Sê como a água do Ocreza: adapta-te, contorna obstáculos e segue em frente.",
+    "Gerir a carreira é como gerir uma empresa. Felizmente, tiveste aulas na ESG sobre isso!",
+    "Navegar no mercado de trabalho pode ser como encontrar sala na ESE no primeiro dia. Mas tu consegues!", 
+    "A fórmula para o sucesso pode não estar nos manuais da ESALD, mas a saúde para o alcançar, sim!", 
+
 
     // --- Impulso Final & Encorajamento ---
     "Este Summit é um catalisador. Usa a energia para impulsionar a tua carreira.",
