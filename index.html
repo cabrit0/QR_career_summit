@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Summit 2025 - WiFi & Motivação</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Área dos Ícones -->
+        <div class="icon-area">
+            <i class="fas fa-qrcode icon qr-style-icon"></i>
+        </div>
+
+        <!-- Cabeçalho com Logo -->
+        <div class="header">
+            <img src="images/banner_novo.png" alt="Career Summit Logo" class="event-logo">
+        </div>
+
+        <!-- Detalhes do Wi-Fi -->
+        <div class="wifi-details">
+            <h2>Acesso à Rede Wi-Fi</h2>
+            <div class="wifi-info">
+                <p class="network-name">
+                    <span class="label">Rede:</span>
+                    <span class="value">Career Summit 2025</span>
+                </p>
+                <p class="network-password">
+                    <span class="label">Password:</span>
+                    <span class="value password-value">IpcbCS2025</span>
+                    <button class="copy-button" onclick="copyPassword()" title="Copiar Password">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z" />
+                        </svg>
+                    </button>
+                </p>
+                <span id="copy-feedback" class="copy-feedback"></span>
+            </div>
+        </div>
+
+        <!-- Frase Motivacional -->
+        <div class="motivational-quote">
+            <p id="quote-text"></p> 
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>Um evento do <a href="https://www.ipcb.pt" target="_blank" rel="noopener noreferrer">IPCB Castelo
+                    Branco</a></p>
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
