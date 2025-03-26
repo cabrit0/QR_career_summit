@@ -8,23 +8,24 @@
 :root {
     --ipcb-blue: #00427C;      /* Azul escuro institucional do IPCB */
     --ipcb-light-blue: #0066B3; /* Azul mais claro para contraste */
-    --card-bg: #ffffff;         /* Fundo do cartão  */
+    --card-bg: #ffffff;         /* Fundo do cartão */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--ipcb-blue);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    padding: 10px;
+    justify-content: center;    
+    align-items: center;      
+    min-height: 100vh;          /* Garante que o body ocupe pelo menos a altura total da tela */
+    padding: 20px;              
     margin: 0;
     color: #333;
-    overflow: hidden;
+    /* overflow: hidden; */     
+    overflow-y: auto;           
 }
 
-/* Animações em uso */
+/* Animações (mantidas como fornecidas) */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -37,41 +38,28 @@ body {
 }
 
 @keyframes qrAnimation {
-    0% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-    }
-    20% {
-        transform: scale(1.1) rotate(5deg);
-    }
-    40% {
-        transform: scale(1) rotate(0deg);
-    }
-    60% {
-        transform: scale(1.1) rotate(-5deg);
-    }
-    80% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-    }
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    20% { transform: scale(1.1) rotate(5deg); }
+    40% { transform: scale(1) rotate(0deg); }
+    60% { transform: scale(1.1) rotate(-5deg); }
+    80% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
-/* Container principal */
+/* Container principal (o "card") */
 .container {
     background-color: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
-    max-width: 800px;
-    width: 100%;
-    height: 92vh;
+    max-width: 800px;           
+    width: 100%;                
+    height: auto;               
+    /* min-height: 0; */       
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 15px;                  /* Espaço entre os elementos filhos diretos (icon, header, wifi, quote, footer) */
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+
 }
 
 /* Área dos ícones */
@@ -79,33 +67,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0 20px 0;
+    /* margin: 0; */ 
 }
 
-/* Ícone QR */
+/* Ícone QR (Font Awesome) */
 .qr-style-icon {
-    font-size: 7.5rem;
+    font-size: 5rem; 
     color: var(--ipcb-blue);
     animation: qrAnimation 3s ease-in-out infinite;
     transform-origin: center;
 }
 
-/* Cabeçalho */
+/* Cabeçalho (contém a imagem) */
 .header {
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
+    /* margin: 0; */ 
 }
 
 /* Logo */
 .event-logo {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    position: relative;
+    width: 100%;                
+    max-width: 700px;           
+    height: auto;              
+    object-fit: contain;        
+    position: relative;         
     transition: transform 0.3s ease;
 }
 
+/* Efeito Shine na Imagem */
 .event-logo::after {
     content: '';
     position: absolute;
@@ -126,10 +116,12 @@ body {
     transform: scale(1.02);
 }
 
+
 h1 {
     color: #1e6091;
     font-size: clamp(1.8rem, 5vw, 2.4rem);
     font-weight: 700;
+    text-align: center; 
 }
 
 /* Detalhes do Wi-Fi */
@@ -145,24 +137,25 @@ h1 {
     border: 1px solid rgba(0, 66, 124, 0.1);
     border-radius: 8px;
     padding: 15px;
-    margin-top: 10px;
+    /* margin: 0; */ 
+    text-align: center; 
 }
 
 h2 {
     font-size: clamp(1.1rem, 4vw, 1.3rem);
     color: #555;
-    margin-bottom: 25px;
+    margin-bottom: 20px; 
     font-weight: 600;
 }
 
 .wifi-info p {
-    margin: 15px 0;
+    margin: 10px 0; /* Espaço vertical entre linhas de rede/password */
     font-size: clamp(1rem, 4vw, 1.2rem);
     line-height: 1.6;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
 }
 
 .label {
@@ -173,7 +166,7 @@ h2 {
 
 .value {
     color: var(--ipcb-blue);
-    word-break: break-all;
+    word-break: break-all; 
 }
 
 .password-value {
@@ -190,58 +183,69 @@ h2 {
     padding: 8px;
     border-radius: 50%;
     transition: all 0.3s ease;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .copy-button:hover {
     background-color: rgba(0, 66, 124, 0.1);
-    transform: scale(1.1) rotate(360deg);
+    transform: scale(1.1) rotate(360deg); /* Rotação adicionada no hover */
     border-color: var(--ipcb-blue);
 }
 
 .copy-button svg {
     width: 16px;
     height: 16px;
+    display: block; /* Evita espaço extra abaixo do SVG */
 }
 
 /* Feedback de cópia */
 .copy-feedback {
     display: block;
-    margin-top: 5px;
+    margin-top: 8px; /* Espaço acima do feedback */
     font-size: 0.85rem;
     color: green;
-    min-height: 1.2em;
+    min-height: 1.2em; /* Reserva espaço para evitar saltos de layout */
     font-weight: 600;
+    text-align: center; 
 }
 
 /* Frase Motivacional */
 .motivational-quote {
-    position: relative;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 90%;
+    /* position: relative; */ 
+    /* margin: 0; */ 
+    /* margin: 15px auto; */ 
+    padding: 15px;
+    /* max-width: 90%; */     
     text-align: center;
-    border-radius: 15px;
+    border-radius: 15px; 
     background: white;
-    box-shadow: 0 10px 30px rgba(0, 66, 124, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 66, 124, 0.1); 
 }
 
 #quote-text {
-    font-size: 1.6rem;
+    /* Usando clamp para responsividade da fonte */
+    font-size: clamp(1rem, 3.5vw, 1.4rem); 
     font-weight: 600;
     color: var(--ipcb-blue);
-    line-height: 1.4;
-    transition: all 0.5s ease;
-    position: relative;
-    z-index: 1;
+    line-height: 1.5; 
+    transition: all 0.5s ease; 
+    /* position: relative; z-index: 1; */
+    font-family: 'Poppins', sans-serif; /* Usar a fonte principal ou Playfair como antes? Vou manter Poppins para consistência */
+    /* font-family: 'Playfair Display', serif; */
+    /* font-style: italic; */ /* Remover se usar Poppins normal */
 }
+
 
 /* Rodapé */
 .footer {
-    margin-top: 30px;
-    padding-top: 20px;
+    /* margin: 0; */ /* Gap do container */
+    padding-top: 15px;
     border-top: 1px solid #e0e0e0;
     font-size: 0.9rem;
     color: #6c757d;
+    text-align: center; 
 }
 
 .footer a {
@@ -254,58 +258,92 @@ h2 {
     text-decoration: underline;
 }
 
-/* Media Queries */
-@media (min-width: 480px) {
-    .header {
-        flex-direction: row;
-        gap: 15px;
-    }
+/* --- Media Queries --- */
 
-    .wifi-info p {
-        flex-wrap: nowrap;
-    }
-}
-
+/* Telas médias (Tablets) */
 @media (max-width: 768px) {
+    body {
+        padding: 15px; 
+    }
+
     .container {
-        padding: 15px;
+        padding: 15px; 
+        gap: 12px;     
     }
-    
-    #quote-text {
-        font-size: 1.2rem;
-    }
-    
-    .wifi-details {
-        padding: 10px;
-    }
-    
-    .motivational-quote {
-        padding: 15px;
-        margin: 15px auto;
-    }
-    
+
     .qr-style-icon {
         font-size: 4rem;
     }
+
+
+
+    .wifi-details,
+    .motivational-quote {
+        padding: 12px; 
+    }
 }
 
+/* Telas pequenas (Móveis) */
 @media (max-width: 480px) {
+     body {
+        padding: 10px; 
+    }
+
+    .container {
+        padding: 10px; 
+        gap: 10px;     
+    }
+
     .event-logo {
-        max-width: 450px;
+        max-width: 90%; 
+    }
+
+     .qr-style-icon {
+        font-size: 3.5rem; 
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    .wifi-info p {
+        margin: 8px 0;
+    }
+
+     .wifi-details,
+    .motivational-quote {
+        padding: 10px;
+    }
+
+     #quote-text {
+         
+         line-height: 1.4;
     }
 }
 
+
+/* Ajustes finos para telas muito estreitas ou baixas, se necessário */
 @media (max-width: 360px) {
-    .container {
-        padding: 20px;
+    .qr-style-icon {
+        font-size: 3rem;
     }
-    h1 {
-        font-size: 1.6rem;
+    /* Outros ajustes finos se necessário */
+}
+
+/* Ajustes para Altura - Opcional, mas pode ajudar em modo paisagem ou telas baixas */
+@media (max-height: 600px) {
+     body {
+        padding: 10px; 
+     }
+     .container {
+         gap: 8px; /
+     }
+     .qr-style-icon {
+         font-size: 3rem;
+     }
+      .wifi-details,
+    .motivational-quote {
+        padding: 8px;
     }
-    .wifi-info p {
-        font-size: 0.95rem;
-    }
-    #quote-text {
-        font-size: 0.95rem;
-    }
+     h2 { margin-bottom: 10px; }
 }

@@ -46,8 +46,8 @@ const motivationalQuotes = [
     "O teu futuro começa com as escolhas de hoje.",
     "Cada desafio é uma oportunidade para cresceres.",
     "A tua jornada é única. Aproveita cada momento.",
-    
-    // Humor
+
+    // Humor (IPCB Themed)
     "És como a biblioteca do IPCB: cheio de conhecimento valioso!",
     "És mais organizado que o horário das aulas práticas!",
     "O teu potencial é maior que a rede Wi-Fi do campus!",
@@ -78,18 +78,24 @@ const motivationalQuotes = [
 function displayRandomQuote() {
     const quoteElement = document.getElementById('quote-text');
     if (quoteElement) {
-        quoteElement.style.transform = 'translateY(20px)';
+        // Animação de saída (opcional, mas suave)
+        quoteElement.style.transform = 'translateY(10px)';
         quoteElement.style.opacity = '0';
-        
+
         setTimeout(() => {
+            // Escolhe e define a nova frase
             const randomIndex = Math.floor(Math.random() * motivationalQuotes.length);
             quoteElement.innerText = motivationalQuotes[randomIndex];
+
+            // Animação de entrada
             quoteElement.style.transform = 'translateY(0)';
             quoteElement.style.opacity = '1';
-        }, 300);
+        }, 300); // Tempo para a animação de saída acontecer
     }
 }
 
-// Atualiza a frase a cada 30 segundos
+// Exibe a primeira frase imediatamente ao carregar
 displayRandomQuote();
-setInterval(displayRandomQuote, 8000);
+
+// Atualiza a frase a cada 8 segundos
+setInterval(displayRandomQuote, 8000); // 8000ms = 8 segundos
